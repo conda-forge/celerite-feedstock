@@ -30,6 +30,7 @@ requirements:
     - blas 1.1 {{ variant }}  # [not win]
     - openblas 0.2.19|0.2.19.*  # [not win]
     - numpy x.x
+    - vs2015_runtime  # [win]
   run:
     - python
     - blas 1.1 {{ variant }}  # [not win]
