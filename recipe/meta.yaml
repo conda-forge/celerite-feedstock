@@ -14,8 +14,11 @@ source:
 
 build:
   number: 0
+  skip:
+    - True  # [win and not py3k]
   script:
     - python setup.py install --single-version-externally-managed --record record.txt --lapack  # [not win]
+    - python setup.py install --single-version-externally-managed --record record.txt  # [win and py3k]
   features:
     - blas_{{ variant }}  # [not win]
 
@@ -29,7 +32,6 @@ requirements:
     - blas 1.1 {{ variant }}  # [not win]
     - openblas 0.2.19|0.2.19.*  # [not win]
     - numpy x.x
-    - vs2015_runtime  # [win]
   run:
     - python
     - blas 1.1 {{ variant }}  # [not win]
