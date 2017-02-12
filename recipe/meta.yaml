@@ -1,6 +1,7 @@
 {% set name = "celerite" %}
-{% set version = "0.1.0" %}
-{% set sha256 = "387b279df818e22033b4cc01e7773cbdc5dcd44382e9bcc375689f6ddd2183d5" %}
+{% set version = "0.1.1.dev0" %}
+{% set sha256 = "5687c0b2288f24f97b80f723c1cb6af32cb37208a2821df54b8e9f7b46e317eb" %}
+{% set variant = "openblas" %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +14,11 @@ source:
 
 build:
   number: 0
-  skip: True  # [win]
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script:
+    - python setup.py install --single-version-externally-managed --record record.txt --lapack  # [not win]
+    - python setup.py install --single-version-externally-managed --record record.txt  # [win]
+  features:
+    - blas_{{ variant }}  # [not win]
 
 requirements:
   build:
@@ -22,11 +26,16 @@ requirements:
     - setuptools
     - toolchain
     - eigen
-    - numpy x.x
     - pybind11
+    - blas 1.1 {{ variant }}  # [not win]
+    - openblas 0.2.19|0.2.19.*  # [not win]
+    - numpy x.x
   run:
     - python
+    - blas 1.1 {{ variant }}  # [not win]
+    - openblas 0.2.19|0.2.19.*  # [not win]
     - numpy x.x
+    - vs2015_runtime  # [win]
 
 test:
   imports:
@@ -35,9 +44,7 @@ test:
 about:
   home: http://github.com/dfm/celerite
   license: MIT
-  license_family: MIT
-  license_file: LICENSE
-  summary: 'Scalable 1D Gaussian Processes in C++, Python, and Julia'
+  summary: 'Scalable 1D Gaussian Processes in C++ and Python'
   doc_url: http://celerite.readthedocs.io/
   dev_url: https://github.com/dfm/celerite
 
