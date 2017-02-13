@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Scalable 1D Gaussian Processes in C++, Python, and Julia
+Summary: Scalable 1D Gaussian Processes in C++ and Python
 
 
 
@@ -16,7 +16,7 @@ Current build status
 
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/celerite-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/celerite-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/celerite-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/celerite-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/celerite-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/celerite-feedstock/branch/master)
 
 Current release info
 ====================
