@@ -1,7 +1,7 @@
 {% set name = "celerite" %}
 {% set version = "0.1.1" %}
 {% set sha256 = "3f5c4920aa09f81b3552a1c12945ea336126087eedf0114ae894643d2a55ee5d" %}
-{% set variant = "openblas" %}
+{% set variant = "mkl" %}
 
 package:
   name: {{ name|lower }}
@@ -11,11 +11,13 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - lapack_build.patch
 
 build:
-  number: 0
+  number: 1
   script:
-    - python setup.py install --single-version-externally-managed --record record.txt --lapack  # [not win]
+    - LAPACK_VARIANT={{ variant }} python setup.py install --single-version-externally-managed --record record.txt  # [not win]
   features:
     - blas_{{ variant }}  # [not win]
 
@@ -26,13 +28,15 @@ requirements:
     - toolchain
     - eigen
     - pybind11
-    - blas 1.1 {{ variant }}  # [not win]
-    - openblas 0.2.19|0.2.19.*  # [not win]
+    - mkl 2017.0.1  # [not win]
+    #- blas 1.1 {{ variant }}  # [not win]
+    #- openblas 0.2.19|0.2.19.*  # [not win]
     - numpy x.x
   run:
     - python
-    - blas 1.1 {{ variant }}  # [not win]
-    - openblas 0.2.19|0.2.19.*  # [not win]
+    - mkl 2017.0.1  # [not win]
+    #- blas 1.1 {{ variant }}  # [not win]
+    #- openblas 0.2.19|0.2.19.*  # [not win]
     - numpy x.x
     - setuptools  # [win]
     - vs2015_runtime  # [win]
