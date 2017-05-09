@@ -1,7 +1,6 @@
 {% set name = "celerite" %}
-{% set version = "0.1.3" %}
-{% set sha256 = "abf9ab06df52ecb442a3ed46477a7751590399d9247ea0c42d1af9dee71b1cb4" %}
-{% set variant = "openblas" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "fcbb163943ea56c36013b5cbac8591cbf108dfd2383cd393c935f8d20863ac5b" %}
 
 package:
   name: {{ name|lower }}
@@ -15,24 +14,17 @@ source:
 build:
   number: 0
   script:
-    - LAPACK_VARIANT='blas_opt' python setup.py install --single-version-externally-managed --record record.txt  # [not win]
-  features:
-    - blas_{{ variant }}  # [not win]
+    - python setup.py install --single-version-externally-managed --record record.txt  # [not win]
 
 requirements:
   build:
     - python
     - setuptools
     - toolchain
-    - eigen
     - pybind11
-    - blas 1.1 {{ variant }}  # [not win]
-    - openblas 0.2.19|0.2.19.*  # [not win]
     - numpy x.x
   run:
     - python
-    - blas 1.1 {{ variant }}  # [not win]
-    - openblas 0.2.19|0.2.19.*  # [not win]
     - numpy x.x
     - setuptools  # [win]
     - vs2015_runtime  # [win]
