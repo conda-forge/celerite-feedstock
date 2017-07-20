@@ -1,6 +1,6 @@
 {% set name = "celerite" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "fcbb163943ea56c36013b5cbac8591cbf108dfd2383cd393c935f8d20863ac5b" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "4ab06d44086486352abe46d8247391eadbe32061ae107d118fa6a97b43b6d0ff" %}
 
 package:
   name: {{ name|lower }}
