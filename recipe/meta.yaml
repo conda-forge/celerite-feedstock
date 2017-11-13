@@ -22,10 +22,10 @@ requirements:
     - setuptools
     - toolchain
     - pybind11
-    - numpy x.x
+    - numpy 1.11.*
   run:
     - python
-    - numpy x.x
+    - numpy >=1.11
     - setuptools  # [win]
     - vs2015_runtime  # [win]
 
