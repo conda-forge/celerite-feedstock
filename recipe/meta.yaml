@@ -1,6 +1,6 @@
 {% set name = "celerite" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "4ab06d44086486352abe46d8247391eadbe32061ae107d118fa6a97b43b6d0ff" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "be7cababe94f5d85a55cc3e019971c1e0117c957b66103e74a26bffa5432ad4d" %}
 
 package:
   name: {{ name|lower }}
@@ -22,10 +22,10 @@ requirements:
     - setuptools
     - toolchain
     - pybind11
-    - numpy x.x
+    - numpy 1.11.*
   run:
     - python
-    - numpy x.x
+    - numpy >=1.11
     - setuptools  # [win]
     - vs2015_runtime  # [win]
 
