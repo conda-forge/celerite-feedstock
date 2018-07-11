@@ -14,14 +14,16 @@ Summary: Scalable 1D Gaussian Processes in C++ and Python
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/celerite-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/celerite-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/celerite-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/celerite-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/celerite-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/celerite-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/celerite-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/celerite-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/celerite-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/celerite-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/celerite-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/celerite-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/celerite/badges/version.svg)](https://anaconda.org/conda-forge/celerite)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/celerite/badges/downloads.svg)](https://anaconda.org/conda-forge/celerite)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-celerite-green.svg)](https://anaconda.org/conda-forge/celerite) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/celerite.svg)](https://anaconda.org/conda-forge/celerite) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/celerite.svg)](https://anaconda.org/conda-forge/celerite) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/celerite.svg)](https://anaconda.org/conda-forge/celerite) |
 
 Installing celerite
 ===================
