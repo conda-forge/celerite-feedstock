@@ -1,6 +1,6 @@
 {% set name = "celerite" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "be7cababe94f5d85a55cc3e019971c1e0117c957b66103e74a26bffa5432ad4d" %}
+{% set version = "0.3.1" %}
+{% set sha256 = "427b36326d3c3d31d8f37c912afb6d1c23263b90ae24b3983705f9dbb98c64e8" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   script:
     - python setup.py install --single-version-externally-managed --record record.txt  # [not win]
 
