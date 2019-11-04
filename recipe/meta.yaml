@@ -38,6 +38,7 @@ test:
 about:
   home: http://github.com/dfm/celerite
   license: MIT
+  license_file: LICENSE
   summary: 'Scalable 1D Gaussian Processes in C++ and Python'
   doc_url: http://celerite.readthedocs.io/
   dev_url: https://github.com/dfm/celerite
