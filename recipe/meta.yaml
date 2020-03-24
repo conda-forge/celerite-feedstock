@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   script:
-    - {{ PYTHON }} -m pip install . --no-deps -vv  # [not win]
+    - python setup.py install --single-version-externally-managed --record record.txt  # [not win]
 
 requirements:
   build:
