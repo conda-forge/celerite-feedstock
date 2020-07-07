@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   script:
-    - python setup.py install --single-version-externally-managed --record record.txt  # [not win]
+    - "{{ PYTHON }} -m pip install . --no-deps -vv"  # [not win]
 
 requirements:
   build:
