@@ -5,7 +5,7 @@ Home: http://github.com/dfm/celerite
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Scalable 1D Gaussian Processes in C++ and Python
 
