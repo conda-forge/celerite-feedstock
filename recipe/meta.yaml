@@ -1,6 +1,6 @@
 {% set name = "celerite" %}
-{% set version = "0.4.0" %}
-{% set sha256 = "170874f5e793e0b8ced86599367963a3399723d7ce7ac6596d4389650a437ba4" %}
+{% set version = "0.4.2" %}
+{% set sha256 = "65afd3f3e6f11421d1d8868da5fdca7318a892aea02b994b618e0ac8f3e4a92d" %}
 
 package:
   name: {{ name|lower }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
-    - "{{ PYTHON }} -m pip install . --no-deps -vv"  # [not win]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
