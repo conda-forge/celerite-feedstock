@@ -1,6 +1,6 @@
 {% set name = "celerite" %}
-{% set version = "0.3.1" %}
-{% set sha256 = "427b36326d3c3d31d8f37c912afb6d1c23263b90ae24b3983705f9dbb98c64e8" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "170874f5e793e0b8ced86599367963a3399723d7ce7ac6596d4389650a437ba4" %}
 
 package:
   name: {{ name|lower }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
+  number: 1
   script:
-    - python setup.py install --single-version-externally-managed --record record.txt  # [not win]
+    - "{{ PYTHON }} -m pip install . --no-deps -vv"  # [not win]
 
 requirements:
   build:
@@ -22,6 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
+    - pip
     - setuptools
     - pybind11
     - numpy
@@ -39,7 +40,7 @@ about:
   home: http://github.com/dfm/celerite
   license: MIT
   license_file: LICENSE
-  summary: 'Scalable 1D Gaussian Processes in C++ and Python'
+  summary: Scalable 1D Gaussian Processes in C++ and Python
   doc_url: http://celerite.readthedocs.io/
   dev_url: https://github.com/dfm/celerite
 
